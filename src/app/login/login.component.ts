@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { User } from '../_models/user';
 
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   user: User = new User(1, 'jason.gill', '1234', 'Jason', 'Gill');
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -26,7 +27,6 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    // Go to home page
-    this.alertMessage = 'Go to home page';
+    this.router.navigate(['/calculator']);
   }
 }
